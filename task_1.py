@@ -48,6 +48,7 @@ def result_time(func):
 def create_list(n): # O(n)
    return [el for el in range(n)]
 
+
 @result_time
 def create_dict(n): # O(n)
    return {el: el for el in range(n)}
@@ -61,6 +62,7 @@ def create_dict(n): # O(n)
 @result_time
 def get_list_item(user_list, n): # O(1)
    return user_list[n]
+
 
 @result_time
 def get_dict_value(user_dict, key): # O(1)
@@ -78,6 +80,7 @@ def del_list_item(user_list, n): # O(1)
    user_list.pop(n)
    return user_list
 
+
 @result_time
 def del_dict_value(user_dict, key): # O(1)
    user_dict.pop(key)
@@ -89,9 +92,6 @@ def del_dict_value(user_dict, key): # O(1)
 что ключ словаря это хэшируемый объект 
 """
 
-
-
-
 if __name__ == '__main__':
 
 # Задание а)
@@ -99,11 +99,13 @@ if __name__ == '__main__':
    print(my_list)
    my_dict = create_dict(1000)
    print(my_dict)
+
 # Задание b)
    my_list_item = get_list_item(my_list, 500)
    print(my_list_item)
    my_dict_value = get_dict_value(my_dict, 500)
    print(my_dict_value)
+   
 # Задание c)
    my_list = del_list_item(my_list, 500)
    print(my_list)

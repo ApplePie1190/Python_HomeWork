@@ -24,11 +24,36 @@
 """
 import hashlib
 
-my_string = 'рара'
 
-hash_obj = hashlib.sha256(bytes(my_string, encoding='utf-8')).hexdigest()
+def hash_obj(user_string):
+	return hashlib.sha256(bytes(user_string, encoding='utf-8')).hexdigest()
 
-print(hash_obj)
+def create_hash_set(user_string): 
+	my_set = {hash_obj(user_string[:1])}
+
+	for i in range(len(user_string)):
+		for j in range(1, len(user_string) + 1):
+			if len(user_string[i:j]) != 0 and len(user_string[i:j]) != len(user_string):
+				my_set.add(hash_obj(user_string[i:j]))
+
+	return my_set
+
+
+if __name__ == '__main__':
+
+	print(create_hash_set('рара'))
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
